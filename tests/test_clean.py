@@ -25,3 +25,8 @@ def test_drops_invalid_and_negative_amounts():
 def test_standardizes_columns_and_converts_amount():
     rows = [{"Order ID": "5", "Amount": "20"}]
     assert clean_rows(rows) == [{"order_id": "5", "amount": 20.0}]
+
+
+def test_drops_zero_amount():
+    rows = [{"Order ID": "6", "Amount": "0"}]
+    assert clean_rows(rows) == []
