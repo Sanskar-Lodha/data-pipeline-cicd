@@ -19,7 +19,7 @@ def clean_rows(rows):
             row["amount"] = float(row["amount"])
         except ValueError:
             continue
-        if row["amount"] < 0:
+        if row["amount"] <= 0:
             continue
 
         # remove duplicates by order_id
